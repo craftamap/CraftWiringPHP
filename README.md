@@ -1,2 +1,6 @@
-# CraftWiringPHP
-A Website to use WiringPi and configure different modes
+#CraftWiringPHP
+##Introduction
+###About
+CraftWiringPHP - a project by Fabian Siegel
+
+CraftWiringPHP provides a website for your Raspberry Pi, makes it able to control Relais over
