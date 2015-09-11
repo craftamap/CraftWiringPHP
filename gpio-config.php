@@ -115,7 +115,7 @@
 	 
 	 <?php
 	 //options array
-	 $options = array("none","latching")
+	 $options = array("none","latching","disabled")
 	 ?>
 	
 	 <label for="mode">Mode:</label>

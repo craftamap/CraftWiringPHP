@@ -33,7 +33,10 @@ if (in_array($pin, $stack)) {
 		
 		shell_exec('gpio -g write ' . $_GET["pin"] . " " . $_GET["status"]); 
 		
+	} elseif ((string)$xml->portconfig[$key]->mode['name'] == "disabled") {
+		
 	}
+	
 	
 } else {
 	//Standard
