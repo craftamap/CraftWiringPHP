@@ -52,6 +52,11 @@
 	.none {
 		display: none;
 	}
+	
+	button {
+		width: 75px;
+		
+	}
 	</style>
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -80,6 +85,9 @@
 	} elseif ($msg == 3) {
 		$alertstat = "alerterror";
 		$alerttext = "Wert nicht vorhanden";
+	} elseif ($msg == 4) {
+		$alertstat = "alertsuccess";
+		$alerttext = "Ausnahme erfolgreich gelöscht";
 	}
   }
   if (empty($_REQUEST['msg'])) {
@@ -139,8 +147,13 @@
 	   <input type='number' id='wert' name='wert' value=<?php print $portconfig->mode->impuls['time']; ?>>
 	 
 	 </br>
-	 <button type="submit">SENDEN</button>
+	 <button type="submit">SEND</button>
  </form> 
+ <form action="gpio-config-make.php">
+ 	<input type="hidden" name="key" value="<?=$key ?>">
+	<input type="hidden" name="action" value="delete">
+	<button type="submit">DELETE</button>
+ </form>
 	 <hr align='left'>
 	
 <?  

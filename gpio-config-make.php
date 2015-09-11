@@ -15,6 +15,8 @@ if ($action == "change") {
 	change($xml, $key, $pin,$mode, $wert);
 } elseif ($action == "new") {
 	neu($xml, $key, $pin,$mode, $wert);
+} elseif ($action == "delete") {
+	delete($xml, $key);
 }
 
 
@@ -62,6 +64,16 @@ function neu ($xml, $key, $pin,$mode, $wert) {
   $xml->AsXML("gpio_config.xml"); //Datei wird beschrieben
   $headerdata = "msg=2";
   header('Location: gpio-config.php?'.$headerdata);
+}
+
+function delete ($xml, $key) {
+	$portconfig = $xml->portconfig[$key];
+	$dom=dom_import_simplexml($portconfig);
+	$dom->parentNode->removeChild($dom);
+	$xml->AsXML("gpio_config.xml"); 
+	$headerdata = "msg=4";
+	header('Location: gpio-config.php?'.$headerdata);
+	
 }
 
 ?>
