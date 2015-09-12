@@ -45,8 +45,8 @@ If you are using this, the status isn't required anymore.
 
 ##What will the future bring us?
 
-* Disable PINS
+* Disable PINS ✓
 * a design
 * Control Overlay
-* wireless socket support
+* wireless socket support ✓
 * Cookies (not sure if browsercookies or baked cookies)
