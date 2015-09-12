@@ -3,6 +3,7 @@
 //VARIABLEN
 $action = $_REQUEST['action'];
 $key = (int)$_REQUEST['key'];
+$home = (int)$_REQUEST['home'];
 $pin = $_REQUEST['pin'];
 $mode = $_REQUEST['mode'];
 $wert = $_REQUEST['wert'];
@@ -17,6 +18,8 @@ if ($action == "change") {
 	neu($xml, $key, $pin,$mode, $wert);
 } elseif ($action == "delete") {
 	delete($xml, $key);
+} elseif ($action == "home") {
+	home($xml, $home);
 }
 
 
@@ -74,6 +77,18 @@ function delete ($xml, $key) {
 	$headerdata = "msg=4";
 	header('Location: gpio-config.php?'.$headerdata);
 	
+}
+
+function home ($xml, $home) {
+	$xml_home = (int)$xml['home'];
+	if ($xml_home == $home) {
+		$headerdata = "msg=1";
+	} else {
+		$xml['home'] = $home;
+		$xml->AsXML("gpio_config.xml");
+		$headerdata = "msg=00";		
+	}
+	header('Location: gpio-config.php?'.$headerdata);
 }
 
 ?>

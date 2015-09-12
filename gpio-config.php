@@ -102,7 +102,15 @@
  <div id="alert" class='alert <?=$alertstat ?>'>
   <?=$alerttext ?>
   </div>
-<?php
+	<form action="gpio-config-make.php">
+	
+		<input type="hidden" name="action" value="home">
+		<label for="home">Home</label>
+		<input name="home" value=<?=$xml['home']?>></input></br>
+		<button type="submit">SEND</button>
+	</form>
+	 <hr align='left'>
+  <?php
   $stack = array(); //Leerer Array wird erstellt 
   foreach ($xml->portconfig as $portconfig) {
 	  $add = $portconfig->pin;
@@ -111,6 +119,7 @@
 	  print $key;
 	  //Ab hier wird die Form geprintet
   ?>
+  
 <form action="gpio-config-make.php"> 
 
 	<input type="hidden" name="key" value="<?=$key ?>">
