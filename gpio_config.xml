@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<config home="11101">
+<config home="11111">
 	
 	
-<portconfig><pin>17</pin><mode name="disabled"><impuls time="1"/></mode></portconfig></config>
+<portconfig><pin>17</pin><mode name="disabled"><impuls time="1"/></mode></portconfig><portconfig><pin>27</pin><mode name="latching"><impuls time="1"/></mode></portconfig></config>

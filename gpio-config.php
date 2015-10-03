@@ -165,7 +165,7 @@
  </form>
 	 <hr align='left'>
 	
-<?  
+<?php
   } //Schleife wird geschlossen
   ?>
   NEW<form action="gpio-config-make.php"> 
@@ -187,6 +187,6 @@
 	   <input type='number' id='wert' name='wert' value=1>
 	 </br>
 	 <button type="submit">SENDEN</button>
- </form>   
+ </form>
   </body>
 </html>
