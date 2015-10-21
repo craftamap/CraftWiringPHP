@@ -1,0 +1,131 @@
+body {
+	background-color: rgb(240,240,240);
+	margin: 0;
+	font-family: sans-serif;
+}
+
+header {
+	background-image: linear-gradient(120deg, #155799, #159957);
+	width: 100%;
+	height: 200px;
+	margin: 0 auto;
+}
+
+nav {
+	width: 60%;
+	margin: 0 auto;
+	text-align: center;
+	font-size:14pt;
+}
+
+ul {
+
+list-style: none;
+}
+
+nav li {
+	display: inline;
+	margin-right: 12px;
+}
+
+article {
+	width: 60%;
+	margin: 0 auto;
+}
+
+h1 {
+	font-family: sans-serif;
+	text-align: center;
+	color:white;
+	padding-top: 75px;
+	font-size: 30pt;
+}
+
+h2 {
+	font family: sans-serif;
+	font-size: 20pt;
+	font-weight: 500;
+	margin: 0;
+}
+
+.button-container {
+    display: inline-block;
+	margin-bottom: 0.5em;
+}
+
+.button-container button {
+    /*display: inline;*/
+    /*vertical-align: middle;*/
+}
+
+
+.btn {
+	display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    /*line-height: 1.42857143;*/
+	line-height:1.2;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+	cursor: pointer;
+    -webkit-user-select: none;
+	background-image: none;
+    border: 1px solid;
+    border-radius: 4px;
+	    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+}
+
+.btn:hover {
+	background-color: #eee;
+}
+
+a {
+	text-decoration: none;
+	color: rgb(50, 50, 50);
+}
+
+a:hover {
+	color: rgb(15,15,15);
+}
+a:visited {
+	color: rgb(70,70,70);
+}
+
+.btn-right {
+	border-left: 0px;
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
+}
+.btn-left {
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px ;
+}
+.btn-none {
+	border-left: 0px;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
+}
+
+.btn-tab {
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 0px;
+	line-height: 1.6;
+}
+
+label {
+	display: inline-block;
+	width: 20px;
+	text-align: right;
+}
+
