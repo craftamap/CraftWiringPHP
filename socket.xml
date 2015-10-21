@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+<config home="11110">
+
+
+<socket socketadr="3" name="Lavalampe"/><socket socketadr="1" name="Number 1"/></config>
+</root>
