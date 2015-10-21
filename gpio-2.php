@@ -53,11 +53,19 @@ if (in_array($pin, $stack)) {
 	//Standard
 	shell_exec('gpio -g write ' . $_GET["pin"] . " " . $_GET["status"]); 
 }
+if(isset($_GET['back'])){
+header('Location: '.$_GET['back'].'.php');
+}
 }
 
 function socket($xml, $socket, $status) {
 	$home = $xml['home'];
-	shell_exec('sudo raspberry-remote/send ' . $home . ' ' . $socket . ' ' . $status);
+	shell_exec('sudo raspberry-remote/send -b ' . $home . ' ' . $socket . ' ' . $status);
 }
+if(isset($_GET['back'])){
+	header('Location: '.$_GET['back'].'.php');
+}
+
 ?>
+
 
