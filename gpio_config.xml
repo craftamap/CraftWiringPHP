@@ -2,4 +2,4 @@
 <config home="11111">
 	
 	
-<portconfig><pin>17</pin><mode name="disabled"><impuls time="1"/></mode></portconfig><portconfig><pin>27</pin><mode name="latching"><impuls time="1"/></mode></portconfig></config>
+<portconfig><pin name="neuer">17</pin><mode name="disabled"><impuls time="1"/></mode></portconfig><portconfig><pin name="Gang">27</pin><mode name="latching"><impuls time="1"/></mode></portconfig><portconfig><pin name="">22</pin><mode name="none"><impuls time="1"/></mode></portconfig><portconfig><pin name="Vorplatz">10</pin><mode name="none"><impuls time="1"/></mode></portconfig></config>
