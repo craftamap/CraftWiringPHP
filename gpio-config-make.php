@@ -7,15 +7,16 @@ $home = (int)$_REQUEST['home'];
 $pin = $_REQUEST['pin'];
 $mode = $_REQUEST['mode'];
 $wert = $_REQUEST['wert'];
+$name = $_REQUEST['name'];
 
 //XML Importieren
 $xml = simplexml_load_file('gpio_config.xml');
 
 //Änderung oder Neu IF
 if ($action == "change") {
-	change($xml, $key, $pin,$mode, $wert);
+	change($xml, $key, $pin,$mode, $wert, $name);
 } elseif ($action == "new") {
-	neu($xml, $key, $pin,$mode, $wert);
+	neu($xml, $key, $pin,$mode, $wert, $name);
 } elseif ($action == "delete") {
 	delete($xml, $key);
 } elseif ($action == "home") {
@@ -23,11 +24,12 @@ if ($action == "change") {
 }
 
 
-function change ($xml, $key, $pin, $mode, $wert) {
+function change ($xml, $key, $pin, $mode, $wert, $name) {
   //VARIABLEN XML
   $xml_pin = (int)$xml->portconfig[$key]->pin;
   $xml_mode = (string)$xml->portconfig[$key]->mode['name'];
   $xml_wert = (int)$xml->portconfig[$key]->mode->impuls['time'];
+  $xml_name = (string)$xml->portconfig[$key]->pin['name'];
 
 
   //VERGLEICHEN; bei != überschreiben MODUS
@@ -45,9 +47,15 @@ function change ($xml, $key, $pin, $mode, $wert) {
 	$xml->portconfig[$key]->mode->impuls['time'] = $wert;
 	$status2=False; 
   }
+  if ($xml_name == $name){
+	$status3=True;
+  } else {
+	$xml->portconfig[$key]->pin['name'] = $name;
+	$status3=False; 
+  }
   
   //If Soll geschrieben werden?
-  if ($status1 == False or $status2 == False){
+  if ($status1 == False or $status2 == False or $status3 == False){
 	$xml->AsXML("gpio_config.xml"); 
 	$headerdata = "msg=00";
   } else {
@@ -56,10 +64,11 @@ function change ($xml, $key, $pin, $mode, $wert) {
   header('Location: gpio-config.php?'.$headerdata);
 }
 
-function neu ($xml, $key, $pin,$mode, $wert) {
+function neu ($xml, $key, $pin,$mode, $wert, $name) {
   
   $portconfig = $xml->addChild('portconfig'); //PortConfig wird erstellt
   $portconfig->addChild('pin',$pin); //Pin wird erstellt & mit Pin gefüllt
+  $portconfig->pin->addAttribute('name', $name);
   $portconfig->addChild('mode'); //mode wird erstellt
   $portconfig->mode->addAttribute('name',$mode); //mode bekommt Modus zugewiesen
   $portconfig->mode->addChild('impuls'); //Impuls wird erstellt
